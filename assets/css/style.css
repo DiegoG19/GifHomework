@@ -1,0 +1,39 @@
+.jumbotron{
+    margin: 10px;
+    width: 97%;
+    text-align: center;
+}
+body{
+    background-image: url(../images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+img{
+    max-height: 150px;
+    width: 150px;
+}
+.btn{
+    
+    margin: 5px;
+    background-color: orange;
+    border-color: #ffffff;
+}
+.gifDiv{
+    float: left;
+    margin:3px;
+}
+
+.container{
+    background-color: azure;
+    padding: 20px;
+    opacity: 0.8;
+    height: 250px;
+}
+
+.article{
+    background-color: aliceblue;
+    float: left;
+    height: 150px;
+    width: 20%;
+}
+
