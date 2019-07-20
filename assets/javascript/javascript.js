@@ -4,10 +4,11 @@ $(document).ready(function(){
 var games= ["Final Fantasy", "Elder Scrolls", "Fallout", "Super Mario", "Dark Souls", "Fire Emblem", "Castlevania"];
 // work out a function that displays the gif buttons 
 function createButtons(){
+    
     //clears this
         $("#GameButtons").empty();
     // creating the for loot for the array above
-        for(var i = 0; i < games.length; i++)
+        for(var i = 0; i < games.length; i++){
         var gamebtn = $("<button>");
      // Adding a class
      gamebtn.addClass("game");
@@ -17,21 +18,24 @@ function createButtons(){
     // adding the .text to games array
      gamebtn.text(games[i]);   
      // Adding the button to the HTML
-     $("#GameButtons").append(gamebtn);     
+     $("#GameButtons").append(gamebtn);   
+        }  
      }
 
 //Add the function for adding a new button 
 function addnewBttn(){
     //adds the on click function to the id addGif
     $("#addGif").on("click", function(){
-        var newgame= $("#game-input").val().trim()
+        var newgame= $("#game-input").val().trim();
+    
     // making sure if nothing is there return as false 
     if (newgame== ""){
         return false;
     }
+    
     games.push(newgame);
-    displayGifBttns();
-    return false;
+    createButtons();
+    
     });
     }
     //last gif to be removed from the display function 
@@ -92,12 +96,12 @@ function addnewBttn(){
     $(document).on("click", ".image", function(){
     var state = $(this).attr('data-state');
     // if and else statements 
-    if (state == 'still') {
-        $(this).attr('src', $(this).attr('data-animate'));
-        $(this).attr('data-state', 'animate');
+    if (state == "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
       } else {
-        $(this).attr('src', $(this).data('still'));
-        $(this).attr('data-state', 'still');
+        $(this).attr("src", $(this).data("still"));
+        $(this).attr("data-state", "still");
       }
     });
     });
